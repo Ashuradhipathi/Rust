@@ -97,7 +97,7 @@ fn takes_and_gives_back(a_string: String) -> String { // a_string comes into
 
     a_string  // a_string is returned and moves out to the calling function
 }*/
-fn main() {
+/*fn main() {
     let s1 = String::from("hello");
 
     let (s2, len) = calculate_length(s1);
@@ -109,4 +109,33 @@ fn calculate_length(s: String) -> (String, usize) {
     let length = s.len(); // len() returns the length of a String
 
     (s, length)
+}*/
+fn main(){
+    let mut s1 = String::from("Heyy");
+
+    let len = calculate_length(&mut s1);
+
+    println!("{}",len);
+    {
+        let r1 = &mut s1;
+        println!("{r1}");
+    }
+
+
+    let r3 = &s1;
+    let r4 = &s1;
+    println!("{r3}");
+    println!("{r4}");
+
+    println!("{r3}");
+    println!("{r4}");
+
+    let r2 = &mut s1;
+
+    println!("{r2}");
+}
+
+fn calculate_length(s: &mut String) -> usize {
+    s.push_str(", World!");
+    s.len()
 }
