@@ -25,6 +25,7 @@ fn main() {
     println!("Can rect1 hold rect3? {}", rect1.can_hold(&rect3));
 
 
+    add();
     println!(
         "The area of rectangle is {} square pixels.",
         rect1.area()
@@ -56,4 +57,12 @@ fn square(size: u32) -> Self {
         height: size,
     }
 }
+}
+
+fn add() {
+    let x: i8 = 5;
+    let y: Option<i8> = Some(5);
+
+    let sum = x + y;
+
 }
